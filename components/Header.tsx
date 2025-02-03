@@ -1,5 +1,4 @@
 import React from 'react';
-import { anchor } from 'pixelarticons';
 type Props = {};
 
 export default function Header({}: Props) {
