@@ -1,5 +1,6 @@
 'use client';
 import React, { useState } from 'react';
+import Counter from './counter/Counter';
 
 export default function Tabs() {
   const [activeTab, setActiveTab] = useState('tabone');
@@ -15,12 +16,11 @@ export default function Tabs() {
         onChange={() => setActiveTab('tabone')}
       />
       <label className="label cursor-pointer" htmlFor="tabone">
-        Counter
+        Timer
       </label>
       {activeTab === 'tabone' && (
         <div className="panel" tabIndex={1}>
-          <h2>Tab One Content</h2>
-          <p>Tab content...</p>
+          <Counter />
         </div>
       )}
 
