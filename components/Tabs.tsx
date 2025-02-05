@@ -35,7 +35,11 @@ export default function Tabs() {
         checked={activeTab === 'tabtwo'}
         onChange={() => setActiveTab('tabtwo')}
       />
-      <label className="label cursor-pointer" htmlFor="tabtwo">
+      <label
+        className={`${status === CounterStatus.RUNNING ? '!cursor-default !text-[#292c21]' : 'cursor-pointer'} label`}
+        style={status === CounterStatus.RUNNING ? { textShadow: '1px 1px #75806f' } : {}}
+        htmlFor="tabtwo"
+      >
         History
       </label>
       {activeTab === 'tabtwo' && (

@@ -2,6 +2,7 @@
 
 import { useCounter } from '@/context/CounterContext';
 import React, { useState, useEffect, useRef } from 'react';
+import CounterHistory from './CounterHistory';
 
 type Props = {};
 
@@ -61,7 +62,7 @@ export default function Counter({}: Props) {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center space-y-4 p-6">
+    <div className="flex flex-col items-center justify-center space-y-4 md:p-6">
       <h2 className="text-3xl font-bold tracking-wider">{formatTime(seconds)}</h2>
 
       <div className="space-x-4">
@@ -78,20 +79,7 @@ export default function Counter({}: Props) {
         </button>
       </div>
       <hr className="cs-hr w-full" />
-      <div className="grid w-full grid-cols-1 gap-y-2 pt-3">
-        Today's history:
-        <table className="table-auto">
-          <tbody>
-            <tr>
-              {times.map((time, index) => (
-                <td key={time + '-' + index} className="border-1 inline-block pr-2">
-                  <p>{time}</p>
-                </td>
-              ))}
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <CounterHistory times={times} />
     </div>
   );
 }
