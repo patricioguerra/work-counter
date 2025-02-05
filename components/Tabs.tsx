@@ -1,10 +1,12 @@
 'use client';
 import React, { useState } from 'react';
 import Counter from './counter/Counter';
+import { useCounter } from '@/context/CounterContext';
+import { CounterStatus } from '@/types';
 
 export default function Tabs() {
   const [activeTab, setActiveTab] = useState('tabone');
-
+  const { status } = useCounter();
   return (
     <div className="cs-tabs w-full text-lg">
       <input
@@ -29,6 +31,7 @@ export default function Tabs() {
         name="tabs"
         type="radio"
         id="tabtwo"
+        disabled={status === CounterStatus.RUNNING}
         checked={activeTab === 'tabtwo'}
         onChange={() => setActiveTab('tabtwo')}
       />
