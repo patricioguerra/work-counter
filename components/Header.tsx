@@ -1,5 +1,5 @@
 'use client';
-import { useCounter } from '@/context/CounterContext';
+import { useCounter } from '@/lib/context/CounterContext';
 import React from 'react';
 type Props = {};
 

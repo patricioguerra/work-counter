@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
-import CounterProvider from '@/context/CounterContext';
+import CounterProvider from '@/lib/context/CounterContext';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
