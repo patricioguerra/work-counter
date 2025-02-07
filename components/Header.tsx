@@ -1,5 +1,5 @@
 'use client';
-import { useCounter } from '@/lib/context/CounterContext';
+import { useCounter } from '@/app/lib/context/CounterContext';
 import React from 'react';
 
 export default function Header() {

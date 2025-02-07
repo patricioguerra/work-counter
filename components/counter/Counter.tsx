@@ -1,6 +1,6 @@
 'use client';
 
-import { useCounter } from '@/lib/context/CounterContext';
+import { useCounter } from '@/app/lib/context/CounterContext';
 import React, { useState, useEffect, useRef } from 'react';
 import CounterHistory from './CounterHistory';
 

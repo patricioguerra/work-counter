@@ -1,4 +1,4 @@
-import { useCounter } from '@/lib/context/CounterContext';
+import { useCounter } from '@/app/lib/context/CounterContext';
 import { CounterStatus } from '@/types';
 import React from 'react';
 

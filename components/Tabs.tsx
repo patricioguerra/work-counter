@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import Counter from './counter/Counter';
-import { useCounter } from '@/lib/context/CounterContext';
+import { useCounter } from '@/app/lib/context/CounterContext';
 import { CounterStatus } from '@/types';
 
 export default function Tabs() {
