@@ -1,9 +1,8 @@
 'use client';
 import { useCounter } from '@/lib/context/CounterContext';
 import React from 'react';
-type Props = {};
 
-export default function Header({}: Props) {
+export default function Header() {
   const { status } = useCounter();
   return (
     <div>

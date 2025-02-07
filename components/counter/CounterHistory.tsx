@@ -13,7 +13,7 @@ export default function CounterHistory({ times }: Props) {
 
   return (
     <div className="grid w-full grid-cols-2 gap-y-2 pt-3">
-      <span>Today's history:</span>
+      <span>Today&apos;s history:</span>
       <div className="ml-auto flex gap-x-2">
         <button className="cs-btn cursor-pointer hover:underline" onClick={handleCopy}>
           Copy

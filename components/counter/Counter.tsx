@@ -4,9 +4,7 @@ import { useCounter } from '@/lib/context/CounterContext';
 import React, { useState, useEffect, useRef } from 'react';
 import CounterHistory from './CounterHistory';
 
-type Props = {};
-
-export default function Counter({}: Props) {
+export default function Counter() {
   const [seconds, setSeconds] = useState<number>(0);
   const [isRunning, setIsRunning] = useState<boolean>(false);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
