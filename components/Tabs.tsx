@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Counter from './counter/Counter';
 import { useCounter } from '@/app/lib/context/CounterContext';
 import { CounterStatus } from '@/types';
+import History from './history/History';
 
 export default function Tabs() {
   const [activeTab, setActiveTab] = useState('tabone');
@@ -44,8 +45,7 @@ export default function Tabs() {
       </label>
       {activeTab === 'tabtwo' && (
         <div className="panel" tabIndex={2}>
-          <h2>Tab Two Content</h2>
-          <p>Tab content...</p>
+          <History />
         </div>
       )}
     </div>

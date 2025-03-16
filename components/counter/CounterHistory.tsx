@@ -1,14 +1,28 @@
 import { useCounter } from '@/app/lib/context/CounterContext';
+import { createClient } from '@/app/utils/supabase/client';
 import { CounterStatus } from '@/types';
-import React from 'react';
 
 type Props = { times: string[] };
 
 export default function CounterHistory({ times }: Props) {
-  const { status } = useCounter();
+  const { status, saveCounter } = useCounter();
   const handleCopy = () => {
     const formattedTimes = times.join('\t');
     navigator.clipboard.writeText(formattedTimes);
+  };
+
+  const handleSave = async () => {
+    const supabase = createClient();
+    const { error } = await supabase.from('history').upsert(
+      {
+        history: times.join('/'),
+        date: new Date().toISOString().split('T')[0],
+        user_id: (await supabase.auth.getUser()).data.user?.id,
+      },
+      { onConflict: 'date' },
+    );
+    saveCounter();
+    if (error) throw error;
   };
 
   return (
@@ -20,10 +34,10 @@ export default function CounterHistory({ times }: Props) {
         </button>
         <button
           className="cs-btn cursor-pointer hover:underline"
-          onClick={handleCopy}
+          onClick={handleSave}
           disabled={status !== CounterStatus.STOPPED}
         >
-          Save
+          {status === CounterStatus.SAVED ? 'Saved' : 'Save'}
         </button>
       </div>
       <div className="col-span-2 flex min-h-10 flex-row space-x-4">
