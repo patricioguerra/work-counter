@@ -17,7 +17,7 @@ export default function Header() {
       if (error) throw error;
       router.push('/login');
     } catch (error) {
-      console.error('Error al cerrar sesión:', error);
+      console.error('Error logging out:', error);
     }
   };
 

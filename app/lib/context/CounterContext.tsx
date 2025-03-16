@@ -7,6 +7,7 @@ type CounterContextType = {
   startCounter: () => void;
   stopCounter: () => void;
   resetCounter: () => void;
+  saveCounter: () => void;
 };
 
 const CounterContext = createContext<CounterContextType | undefined>(undefined);
@@ -21,9 +22,12 @@ export default function CounterProvider({ children }: Props) {
   const startCounter = () => setStatus(CounterStatus.RUNNING);
   const stopCounter = () => setStatus(CounterStatus.STOPPED);
   const resetCounter = () => setStatus(CounterStatus.NOT_STARTED);
+  const saveCounter = () => setStatus(CounterStatus.SAVED);
 
   return (
-    <CounterContext.Provider value={{ status, startCounter, stopCounter, resetCounter }}>
+    <CounterContext.Provider
+      value={{ status, startCounter, stopCounter, resetCounter, saveCounter }}
+    >
       {children}
     </CounterContext.Provider>
   );
