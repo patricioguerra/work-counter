@@ -6,25 +6,16 @@ export default function Footer() {
     <footer className="row-start-3 flex flex-wrap items-center justify-center gap-6">
       <a
         className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-        href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+        href="https://cs16.samke.me/"
         target="_blank"
         rel="noopener noreferrer"
       >
         <Image aria-hidden src="/file.svg" alt="File icon" width={16} height={16} />
-        Learn
+        Styles
       </a>
       <a
         className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-        href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <Image aria-hidden src="/window.svg" alt="Window icon" width={16} height={16} />
-        Examples
-      </a>
-      <a
-        className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-        href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+        href="https://github.com/patricioguerra"
         target="_blank"
         rel="noopener noreferrer"
       >
