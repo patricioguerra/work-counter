@@ -33,22 +33,24 @@ export default function History({}: Props) {
   const currentItems = history.slice(indexOfFirstItem, indexOfLastItem);
 
   return (
-    <div>
-      {currentItems.map((item) => (
-        <div key={item.date}>
-          <div className="flex flex-row justify-between gap-x-2">
-            <p className="flex-1 whitespace-nowrap">{item.date}</p>
-            <p className="truncate">{item.history.split('/').join(' | ')}</p>
-            <button
-              className="cs-btn cursor-pointer hover:underline"
-              onClick={() => handleCopy(item.history)}
-            >
-              Copy
-            </button>
+    <div className="flex flex-col justify-center pt-10">
+      <div>
+        {currentItems.map((item) => (
+          <div key={item.date}>
+            <div className="flex flex-row justify-between gap-x-2">
+              <p className="flex-1 whitespace-nowrap">{item.date}</p>
+              <p className="truncate">{item.history.split('/').join(' | ')}</p>
+              <button
+                className="cs-btn cursor-pointer hover:underline"
+                onClick={() => handleCopy(item.history)}
+              >
+                Copy
+              </button>
+            </div>
+            <hr className="cs-hr flex" />
           </div>
-          <hr className="cs-hr flex" />
-        </div>
-      ))}
+        ))}
+      </div>
       <HistoryPagination
         history={history}
         currentPage={currentPage}

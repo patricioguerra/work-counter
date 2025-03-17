@@ -22,7 +22,7 @@ export default function Tabs() {
         Timer
       </label>
       {activeTab === 'tabone' && (
-        <div className="panel" tabIndex={1}>
+        <div className="panel min-h-[310px]" tabIndex={1}>
           <Counter />
         </div>
       )}
@@ -44,7 +44,7 @@ export default function Tabs() {
         History
       </label>
       {activeTab === 'tabtwo' && (
-        <div className="panel" tabIndex={2}>
+        <div className="panel min-h-[310px]" tabIndex={2}>
           <History />
         </div>
       )}
