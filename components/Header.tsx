@@ -4,10 +4,11 @@ import { useCounter } from '@/app/lib/context/CounterContext';
 import React, { useEffect, useState } from 'react';
 import { createClient } from '@/app/utils/supabase/client';
 import { useRouter } from 'next/navigation';
+import { Session } from '@supabase/supabase-js';
 
 export default function Header() {
   const { status } = useCounter();
-  const [session, setSession] = useState<any>(null);
+  const [session, setSession] = useState<Session | null>(null);
   const supabase = createClient();
   const router = useRouter();
 

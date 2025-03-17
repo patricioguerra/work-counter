@@ -3,9 +3,7 @@ import { HistoryType } from '@/types';
 import React, { useEffect, useState } from 'react';
 import HistoryPagination from './HistoryPagination';
 
-type Props = {};
-
-export default function History({}: Props) {
+export default function History() {
   const [history, setHistory] = useState<HistoryType[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 5;
