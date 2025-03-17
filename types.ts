@@ -4,3 +4,9 @@ export enum CounterStatus {
   STOPPED = 'Stopped',
   SAVED = 'Saved',
 }
+
+export type HistoryType = {
+  id: number;
+  date: string;
+  history: string;
+};

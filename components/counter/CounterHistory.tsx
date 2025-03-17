@@ -16,7 +16,7 @@ export default function CounterHistory({ times }: Props) {
     const { error } = await supabase.from('history').upsert(
       {
         history: times.join('/'),
-        date: new Date().toISOString().split('T')[0],
+        date: new Date(Date.now() - 7 * 86400000).toISOString().split('T')[0],
         user_id: (await supabase.auth.getUser()).data.user?.id,
       },
       { onConflict: 'date' },
