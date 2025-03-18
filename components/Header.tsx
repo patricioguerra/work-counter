@@ -41,28 +41,21 @@ export default function Header() {
   }, []);
 
   return (
-    <div className={session ? 'flex flex-row items-center justify-between' : ''}>
-      <div>
-        <h1 className={`text-4xl font-medium tracking-wide ${!session && 'flex justify-center'}`}>
-          Work timer
-        </h1>
-        {session && <div className="text-2xl tracking-wide">{status}</div>}
+    <div className={session ? 'flex flex-nowrap items-center justify-between gap-2' : ''}>
+      <div className="flex-shrink-0">
+        {' '}
+        <h1 className="whitespace-nowrap text-4xl font-medium tracking-wide">Work timer</h1>
+        {session && <div className="truncate text-2xl tracking-wide">{status}</div>}
       </div>
-      <div>
-        {session && (
-          <div className="flex flex-col items-center justify-between gap-2">
-            <div>
-              Logged as{' '}
-              {session.user.user_metadata.full_name ||
-                session.user.identities?.[0]?.identity_data?.name ||
-                session.user.email}
-            </div>
-            <button className="cs-btn ml-auto" onClick={handleSignOut}>
-              Logout
-            </button>
-          </div>
-        )}
-      </div>
+
+      {session && (
+        <div className="flex min-w-0 flex-shrink flex-col items-center gap-2 truncate">
+          <div className="max-w-[130px] truncate sm:max-w-full"> {session.user.email}</div>
+          <button className="cs-btn ml-auto shrink-0" onClick={handleSignOut}>
+            Logout
+          </button>
+        </div>
+      )}
     </div>
   );
 }

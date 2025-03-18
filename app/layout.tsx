@@ -23,7 +23,7 @@ export default function RootLayout({
           href="https://cdn.jsdelivr.net/gh/ekmas/cs16.css@main/css/cs16.min.css"
         />
       </head>
-      <body className="mx-auto grid min-h-screen max-w-[650px] grid-cols-1 items-center gap-16 p-8 pb-20">
+      <body className="mx-auto grid h-screen max-w-[650px] grid-cols-1 items-center gap-12 p-8 pb-20 sm:gap-16">
         <CounterProvider>
           <Header />
           <main>{children}</main>
