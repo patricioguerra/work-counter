@@ -40,7 +40,7 @@ export default function CounterHistory({ times }: Props) {
           {status === CounterStatus.SAVED ? 'Saved' : 'Save'}
         </button>
       </div>
-      <div className="col-span-2 flex min-h-10 flex-row space-x-4">
+      <div className="col-span-2 flex min-h-10 flex-wrap space-x-4">
         {times.map((time, index) => (
           <div key={time + '-' + index}>
             <p>{time}</p>

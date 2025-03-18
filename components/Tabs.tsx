@@ -32,13 +32,13 @@ export default function Tabs() {
         name="tabs"
         type="radio"
         id="tabtwo"
-        disabled={status === CounterStatus.RUNNING}
+        disabled={status !== CounterStatus.NOT_STARTED}
         checked={activeTab === 'tabtwo'}
         onChange={() => setActiveTab('tabtwo')}
       />
       <label
-        className={`${status === CounterStatus.RUNNING ? '!cursor-default !text-[#292c21]' : 'cursor-pointer'} label`}
-        style={status === CounterStatus.RUNNING ? { textShadow: '1px 1px #75806f' } : {}}
+        className={`${status !== CounterStatus.NOT_STARTED ? '!cursor-default !text-[#292c21]' : 'cursor-pointer'} label`}
+        style={status !== CounterStatus.NOT_STARTED ? { textShadow: '1px 1px #75806f' } : {}}
         htmlFor="tabtwo"
       >
         History

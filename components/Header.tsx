@@ -51,7 +51,12 @@ export default function Header() {
       <div>
         {session && (
           <div className="flex flex-col items-center justify-between gap-2">
-            <div>Logged as {session.user.user_metadata.full_name}</div>
+            <div>
+              Logged as{' '}
+              {session.user.user_metadata.full_name ||
+                session.user.identities?.[0]?.identity_data?.name ||
+                session.user.email}
+            </div>
             <button className="cs-btn ml-auto" onClick={handleSignOut}>
               Logout
             </button>
